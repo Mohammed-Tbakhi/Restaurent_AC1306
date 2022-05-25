@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace MohammedTbakhi_Ac1306
+namespace Restaurant_AC1306
 {
     public partial class frmlogin_2 : Form
     {
@@ -39,7 +39,12 @@ namespace MohammedTbakhi_Ac1306
         {
             lblUsername.Text = "Welcome " + _user;
         }
-        
+
+        private void btnDataBase_Click(object sender, EventArgs e)
+        {
+            frmDataBase data = new frmDataBase();
+            data.Show();
+        }
     }
 }
 

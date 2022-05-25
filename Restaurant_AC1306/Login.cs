@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MohammedTbakhi_Ac1306
+namespace Restaurant_AC1306
 {
     public partial class frmlogin : Form
     {

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace MohammedTbakhi_Ac1306
+namespace Restaurant_AC1306
 {
     public partial class frm7 : Form
     {

@@ -10,7 +10,7 @@ using System.Data.OleDb;
 using System.Windows.Forms;
 
 
-namespace Restaurant_Ac1306
+namespace Restaurant_AC1306
 {
     public partial class frmDataBase : Form
     {
@@ -21,10 +21,10 @@ namespace Restaurant_Ac1306
         void GetAllCourses()
         {
 
-            OleDbConnection con = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; " +
+            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
                 "Data Source=C:\\Users\\ASUS\\Desktop\\Food.accdb");
             DataTable dt = new DataTable();
-            OleDbDataAdapter adapter = new OleDbDataAdapter("Select * from courses", con);
+            OleDbDataAdapter adapter = new OleDbDataAdapter("Select * from Restaraunt", con);
             con.Open();
             adapter.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -44,10 +44,10 @@ namespace Restaurant_Ac1306
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
                     "Data Source=C:\\Users\\ASUS\\Desktop\\Food.accdb");
             con.Open();
-            OleDbCommand cmd = new OleDbCommand("Insert into Restaraunt values(@ID, @Food Type, @Price)", con);
+            OleDbCommand cmd = new OleDbCommand("Insert into Restaraunt values(@ID, @FoodType, @Price)", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(txtID.Text));
-            cmd.Parameters.AddWithValue("@Food Type", txtFoodType.Text);
-            cmd.Parameters.AddWithValue("@Price", int.Parse(txtPrice.Text));
+            cmd.Parameters.AddWithValue("@FoodType", txtFoodType.Text);
+            cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
 
             cmd.ExecuteNonQuery();
             con.Close();
@@ -73,13 +73,13 @@ namespace Restaurant_Ac1306
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " + 
-                "Data Source=C:\\Users\\SCHOOL\\Desktop\\Database21.accdb");
+            OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
+                "Data Source=C:\\Users\\ASUS\\Desktop\\Food.accdb");
 
-            string update = "UPDATE Restaraunt" + " SET Food Type=@Food Type, Pricer=@Price " + "WHERE id=" + dataGridView1.CurrentRow.Cells[0].Value.ToString() + "";
+            string update = "UPDATE Restaraunt" + " SET FoodType= @FoodType, Price= @Price WHERE ID=" + dataGridView1.CurrentRow.Cells[0].Value.ToString() + "";
             OleDbCommand cmd = new OleDbCommand(update, con);
-            cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtID.Text));
-            cmd.Parameters.AddWithValue("@Food Type", txtFoodType.Text);
+            cmd.Parameters.AddWithValue(dataGridView1.CurrentRow.Cells[0].Value.ToString(), Convert.ToInt32(txtID.Text));
+            cmd.Parameters.AddWithValue("@FoodType", txtFoodType.Text);
             cmd.Parameters.AddWithValue("@Price", txtPrice.Text);
             con.Open();
             cmd.ExecuteNonQuery();

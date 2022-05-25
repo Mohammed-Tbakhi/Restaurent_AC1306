@@ -1,5 +1,5 @@
 ﻿
-namespace MohammedTbakhi_Ac1306
+namespace Restaurant_AC1306
 {
     partial class frm19
     {

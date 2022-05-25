@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MohammedTbakhi_Ac1306
+namespace Restaurant_AC1306
 {
     class User
     {
