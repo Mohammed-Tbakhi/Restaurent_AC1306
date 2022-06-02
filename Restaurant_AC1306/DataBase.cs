@@ -92,5 +92,10 @@ namespace Restaurant_AC1306
         {
             GetAllCourses();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
