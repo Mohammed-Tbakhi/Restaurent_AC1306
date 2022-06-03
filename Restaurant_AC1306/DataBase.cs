@@ -22,7 +22,7 @@ namespace Restaurant_AC1306
         {
 
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
-                "Data Source=C:\\Users\\ASUS\\Desktop\\Restaurant_AC1306\\Restaurant_AC1306\\Database\\Food.accdb");
+                "Data Source= Food.mdb");
             DataTable dt = new DataTable();
             OleDbDataAdapter adapter = new OleDbDataAdapter("Select * from Restaraunt", con);
             con.Open();
@@ -42,7 +42,7 @@ namespace Restaurant_AC1306
         private void btnInsert_Click(object sender, EventArgs e)
         {
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
-                    "Data Source=C:\\Users\\ASUS\\Desktop\\Restaurant_AC1306\\Restaurant_AC1306\\Database\\Food.accdb");
+                    "Data Source=Food.mdb");
             con.Open();
             OleDbCommand cmd = new OleDbCommand("Insert into Restaraunt values(@ID, @FoodType, @Price)", con);
             cmd.Parameters.AddWithValue("@ID", int.Parse(txtID.Text));
@@ -59,7 +59,7 @@ namespace Restaurant_AC1306
         {
             string delete = "Delete From Restaraunt Where ID=@ID";
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
-                "Data Source=C:\\Users\\ASUS\\Desktop\\Restaurant_AC1306\\Restaurant_AC1306\\Database\\Food.accdb");
+                "Data Source=Food.mdb");
 
             OleDbCommand cmd = new OleDbCommand(delete, con);
             cmd.Parameters.AddWithValue("@ID", Convert.ToInt32(txtID.Text));
@@ -74,7 +74,7 @@ namespace Restaurant_AC1306
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; " +
-                "Data Source=C:\\Users\\ASUS\\Desktop\\Restaurant_AC1306\\Restaurant_AC1306\\Database\\Food.accdb");
+                "Data Source= Food.mdb");
 
             string update = "UPDATE Restaraunt" + " SET FoodType= @FoodType, Price= @Price WHERE ID=" + dataGridView1.CurrentRow.Cells[0].Value.ToString() + "";
             OleDbCommand cmd = new OleDbCommand(update, con);

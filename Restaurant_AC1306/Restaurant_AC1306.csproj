@@ -74,6 +74,11 @@
     <Compile Include="DataBase.designer.cs">
       <DependentUpon>DataBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="FoodDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FoodDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +283,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="FoodDataSet.xsc">
+      <DependentUpon>FoodDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FoodDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FoodDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FoodDataSet.xss">
+      <DependentUpon>FoodDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -292,10 +308,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataLayer\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Database\Food.accdb">
+    <Content Include="Food.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
